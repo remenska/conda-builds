@@ -47,7 +47,7 @@ install:
   - conda install --yes jinja2
   - conda install --yes conda-server
   - conda install --yes anaconda-client
-  - conda config --add channels http://conda.anaconda.org/NLeSC  
+  - conda config --add channels http://conda.anaconda.org/NLeSC  # should be https://conda.anaconda.org/NLeSC/channel/dev
   - CONDA_PY=${PYTHON} conda build ./root${ROOT}
   #- conda create -q -n testenv python=${PYTHON} root=${ROOT} numpy rootpy
   #- source activate testenv
