@@ -160,22 +160,25 @@ mkdir workdir
 cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
--Dbuiltin_llvm=ON \
--Dcxx11=ON \
--Drpath=ON \
+-Dgminimal=ON \
+-Dasimage=ON
 -Droofit=ON \
--Dopengl=OFF \
--Dgviz=OFF \
--Dasimage=ON \
 -Dbuiltin_afterimage=ON \
--Dastiff=ON \
--Dsqlite=OFF \
--Dldap=OFF \
--Dpgsql=OFF  \
--Dkrb5=OFF \
--Dpgsql=OFF \
--Dfortran=OFF \
 || return 1;
+#-Dbuiltin_llvm=ON \
+#-Dcxx11=ON \
+#-Drpath=ON \
+#-Dopengl=OFF \
+#-Dgviz=OFF \
+#-Dasimage=ON \
+#-Dastiff=ON \
+#-Dsqlite=OFF \
+#-Dldap=OFF \
+#-Dpgsql=OFF  \
+#-Dkrb5=OFF \
+#-Dpgsql=OFF \
+#-Dfortran=OFF \
+
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
 #-DFREETYPE_LIBRARY=$PREFIX/lib \
