@@ -161,8 +161,6 @@ cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dbuiltin_llvm=ON \
--Dbuiltin_zlib=ON \
--Dbuiltin-lzma=ON \
 -Dcxx11=ON \
 -Drpath=ON \
 -Droofit=ON \
@@ -171,7 +169,11 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dasimage=ON \
 -Dbuiltin_afterimage=ON \
 -Dastiff=ON \
--Dsqlite=ON \
+-Dsqlite=OFF \
+-Dldap=OFF \
+-Dpgsql=OFF  \
+-Dkrb5=OFF \
+-Dpgsql=OFF \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
@@ -182,6 +184,9 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 # -Dbuiltin_pcre=ON \
 # -Dbuiltin_freetype=ON \
 #-Dbuiltin_gsl=ON \
+# -Dbuiltin-lzma=ON \
+# -Dbuiltin_zlib=ON \
+
 
 make -j2 || return 1;
 make install || return 1;
