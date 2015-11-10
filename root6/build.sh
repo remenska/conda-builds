@@ -164,6 +164,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dasimage=ON \
 -Droofit=ON \
 -Dbuiltin_afterimage=ON \
+-Dpython=ON \
 || return 1;
 #-Dbuiltin_llvm=ON \
 #-Dcxx11=ON \
