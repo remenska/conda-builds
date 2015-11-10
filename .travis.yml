@@ -1,0 +1,61 @@
+sudo: false
+
+language: python
+
+
+matrix:
+    include:
+        - language: generic
+          os: osx
+          osx_image: xcode6.1
+          env: PYTHON=2.7 ROOT=5
+        - language: generic
+          os: osx
+          osx_image: xcode6.1
+          env: PYTHON=3.4 ROOT=5
+        - language: generic
+          os: osx
+          osx_image: xcode6.1
+          env: PYTHON=2.7 ROOT=6
+        - language: generic
+          os: osx
+          osx_image: xcode6.1
+          env: PYTHON=3.4 ROOT=6
+    allow_failures:
+        - os: osx
+
+#before_script:
+#    - if [ "$TRAVIS_OS_NAME" == "linux" ]; then  
+#          export DISPLAY=:99.0; 
+#          sh -e /etc/init.d/xvfb start; 
+#          sleep 3; 
+#      fi
+
+install:
+  # Conda
+  - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then curl --silent http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
+  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
+  
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda update --yes --all
+  - conda info -a # Useful for debugging any issues with conda
+  - conda install --yes -q conda-build
+  - conda install --yes jinja2
+  - conda install --yes conda-server
+  - conda install --yes anaconda-client
+  - conda config --add channels http://conda.anaconda.org/NLeSC  
+  - CONDA_PY=${PYTHON} conda build ./root${ROOT}
+  #- conda create -q -n testenv python=${PYTHON} root=${ROOT} numpy rootpy
+  #- source activate testenv
+  #- conda uninstall -q sqlite libpng libx11
+  #- root -b -q
+
+
+script:
+  - python tests/test_root.py
+  - python tests/test_stl.py
+
