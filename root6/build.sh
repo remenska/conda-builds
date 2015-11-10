@@ -174,6 +174,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dpgsql=OFF  \
 -Dkrb5=OFF \
 -Dpgsql=OFF \
+\Dfortran=OFF \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
