@@ -161,7 +161,7 @@ cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dgminimal=ON \
--Dasimage=ON
+-Dasimage=ON \
 -Droofit=ON \
 -Dbuiltin_afterimage=ON \
 || return 1;
