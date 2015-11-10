@@ -22,7 +22,7 @@ requirements:
         - python  # [{{ environ.get('PY_VER') }}]     
         - openssl
         - qt # [linux]
-        - sqlite 
+        - sqlite # [linux]
         - fftw
         - pcre
         - libxml2
