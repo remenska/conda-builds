@@ -45,11 +45,12 @@ install:
   - conda info -a # Useful for debugging any issues with conda
   - conda install --yes -q conda-build
   - conda install --yes jinja2
-  - conda install --yes conda-server
+  #- conda install --yes conda-server
   - conda install --yes anaconda-client
   - conda config --add channels http://conda.anaconda.org/NLeSC  # should be https://conda.anaconda.org/NLeSC/channel/dev
   - conda config --set show_channel_urls yes
   - CONDA_PY=${PYTHON} conda build ./root${ROOT}
+  #- anaconda -t $BINSTAR_TOKEN upload --channel dev --force /Users/travis/miniconda/conda-bld/osx-64/root-$ROOT*.tar.bz2
   - conda create -q -n testenv python=${PYTHON} root=${ROOT} numpy rootpy --use-local
   - source activate testenv
   - conda uninstall -q sqlite libpng libx11 jpeg libtiff
