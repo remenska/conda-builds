@@ -185,12 +185,13 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dpgsql=OFF \
 -Dshadowpw=OFF \
 -Dfftw3=OFF \
--Dfortran=OFF\
+-Dfortran=OFF \
 -Dgenvector=OFF \
 -Dmathmore=OFF \
 -Dmemstat=OFF \
 -Dssl=OFF \
 -Dxml=OFF \
+-D builtin_ftgl=OFF \
 || return 1;
 # -Droofit=ON \
 
