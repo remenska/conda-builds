@@ -168,6 +168,9 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dccache=ON \
 -Dlibcxx=ON \
 -Dpython=ON \
+-DPYTHON_EXECUTABLE="${PREFIX}/bin/python" \
+-DPYTHON_INCLUDE_DIR="${PREFIX}/include/python3.4m" \
+-DPYTHON_LIBRARY="${PREFIX}/lib/libpython3.4m.dylib" \
 || return 1;
 # -Droofit=ON \
 
