@@ -163,15 +163,14 @@ mkdir workdir
 cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
--Dccache=ON \
--Droofit=ON \
--Dcxx11=ON \
--Dlibcxx=ON \
--Dpython=ON \
 -Dminimal=ON \
--DPYTHON_LIBRARY="${PREFIX}/lib/libpython3.4m.dylib" \
--DPYTHON_INCLUDE_DIR="${PREFIX}/include" \
+-Dpython=ON \
 || return 1;
+# -Dccache=ON \
+# -Droofit=ON \
+# -Dcxx11=ON \
+# -Dlibcxx=ON \
+
 # -Dopengl=OFF \
 # -Dsqlite=OFF \
 # # -Dldap=OFF \
