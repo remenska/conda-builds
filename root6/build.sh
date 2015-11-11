@@ -126,11 +126,12 @@ export PYTHON_INCLUDE_DIR="${PREFIX}/include"
 export PYTHON_LIBRARY="${PREFIX}/lib/libpython3.4m.dylib"
 make distclean;
 
-#  ./configure \
+ ./configure \
 #      ${ARCH,,*}x8664gcc \
-#      --minimal \
+     --minimal \
 #      --enable-x11 \
-#      --enable-python \
+     --enable-python \
+     || return 1;
 #      --enable-xml \
 #      --with-python-incdir=`python3.4-config --exec-prefix`/include/python3.4m \
 #      --with-python-libdir=`python3.4-config --exec-prefix`/lib \
@@ -159,13 +160,13 @@ make distclean;
 #--with-python-libdir=${PREFIX}/lib/ \
 #--with-x11-libdir=${PREFIX}/lib/ \
 
-mkdir workdir
-cd workdir
+# mkdir workdir
+# cd workdir
 
-cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
--Dminimal=ON \
--Dpython=ON \
-|| return 1;
+# cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
+# -Dminimal=ON \
+# -Dpython=ON \
+# || return 1;
 # -Dccache=ON \
 # -Droofit=ON \
 # -Dcxx11=ON \
