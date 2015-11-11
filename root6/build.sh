@@ -122,14 +122,15 @@ export PNG_LIBRARY_RELEASE="${PREFIX}/lib/libpng.dylib"
 export FREETYPE_INCLUDE_DIR="${PREFIX}/include"
 export FREETYPE_LIBRARIES="${PREFIX}/lib/freetype.lib"
 export PYTHON_EXECUTABLE="${PREFIX}/bin/python"
-export PYTHON_INCLUDE_DIR="${PREFIX}/include"
+export PYTHON_INCLUDE_DIR="${PREFIX}/include/python3.4m"
 export PYTHON_LIBRARY="${PREFIX}/lib/libpython3.4m.dylib"
 make distclean;
 
- ./configure \
-     --minimal \
-     --enable-python \
-     || return 1;
+#  ./configure \
+#      ${ARCH,,*}x8664gcc \
+#      --minimal \
+#      --enable-x11 \
+#      --enable-python \
 #      --enable-xml \
 #      --with-python-incdir=`python3.4-config --exec-prefix`/include/python3.4m \
 #      --with-python-libdir=`python3.4-config --exec-prefix`/lib \
@@ -158,17 +159,18 @@ make distclean;
 #--with-python-libdir=${PREFIX}/lib/ \
 #--with-x11-libdir=${PREFIX}/lib/ \
 
-# mkdir workdir
-# cd workdir
+mkdir workdir
+cd workdir
 
-# cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
-# -Dminimal=ON \
-# -Dpython=ON \
-# || return 1;
-# -Dccache=ON \
+cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
+-Dminimal=ON \
+-Dcxx11=ON \
+-Dccache=ON \
+-Dlibcxx=ON \
+-Dpython=ON \
+|| return 1;
 # -Droofit=ON \
-# -Dcxx11=ON \
-# -Dlibcxx=ON \
+
 
 # -Dopengl=OFF \
 # -Dsqlite=OFF \
