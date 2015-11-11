@@ -191,7 +191,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dmemstat=OFF \
 -Dssl=OFF \
 -Dxml=OFF \
--D builtin_ftgl=OFF \
+-Dbuiltin_ftgl=OFF \
 || return 1;
 # -Droofit=ON \
 
