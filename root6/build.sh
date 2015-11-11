@@ -170,7 +170,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dpython=ON \
 -DPYTHON_EXECUTABLE="${PREFIX}/bin/python" \
 -DPYTHON_INCLUDE_DIR="${PREFIX}/include" \
--DPYTHONPATH="${PREFIX}/lib/"
+-DPYTHONPATH="${PREFIX}/lib/" \
 || return 1;
 #-Dbuiltin_llvm=ON \
 #-Dcxx11=ON \
