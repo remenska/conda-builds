@@ -121,9 +121,9 @@ export PNG_PNG_INCLUDE_DIR="${PREFIX}/include"
 export PNG_LIBRARY_RELEASE="${PREFIX}/lib/libpng.dylib"
 export FREETYPE_INCLUDE_DIR="${PREFIX}/include"
 export FREETYPE_LIBRARIES="${PREFIX}/lib/freetype.lib"
-export PYTHON_EXECUTABLE="${PREFIX}/bin/python"
-export PYTHON_INCLUDE_DIR="${PREFIX}/include/python3.4m"
-export PYTHON_LIBRARY="${PREFIX}/lib/libpython3.4m.dylib"
+# export PYTHON_EXECUTABLE="${PREFIX}/bin/python"
+# export PYTHON_INCLUDE_DIR="${PREFIX}/include/python3.4m"
+# export PYTHON_LIBRARY="${PREFIX}/lib/libpython3.4m.dylib"
 make distclean;
 
 #  ./configure \
@@ -163,14 +163,34 @@ mkdir workdir
 cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
--Dminimal=ON \
--Dcxx11=ON \
 -Dccache=ON \
--Dlibcxx=ON \
 -Dpython=ON \
--DPYTHON_EXECUTABLE="${PREFIX}/bin/python" \
--DPYTHON_INCLUDE_DIR="${PREFIX}/include/python3.4m" \
--DPYTHON_LIBRARY="${PREFIX}/lib/libpython3.4m.dylib" \
+-Droofit=ON \
+-Dalien=OFF \
+-Dasimage=OFF \
+-Dastiff=OFF \
+-Dbonjour=OFF \
+-Dbuiltin_ftgl=OFF \
+-Dbuiltin_glew=OFF \
+-Dccache=ON \
+-Dchirp=OFF \
+-Ddcache=OFF \
+-Dfitsio=OFF \
+-Dgviz=OFF \
+-Dopengl=OFF \
+-Dsqlite=OFF \
+-Dldap=OFF \
+-Dpgsql=OFF \
+-Dkrb5=OFF \
+-Dpgsql=OFF \
+-Dshadowpw=OFF \
+-Dfftw3=OFF \
+-Dfortran=OFF\
+-Dgenvector=OFF \
+-Dmathmore=OFF \
+-Dmemstat=OFF \
+-Dssl=OFF \
+-Dxml=OFF \
 || return 1;
 # -Droofit=ON \
 
