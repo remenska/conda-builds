@@ -127,9 +127,7 @@ export PYTHON_LIBRARY="${PREFIX}/lib/libpython3.4m.dylib"
 make distclean;
 
  ./configure \
-#      ${ARCH,,*}x8664gcc \
      --minimal \
-#      --enable-x11 \
      --enable-python \
      || return 1;
 #      --enable-xml \
