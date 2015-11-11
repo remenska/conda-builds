@@ -121,6 +121,9 @@ export PNG_PNG_INCLUDE_DIR="${PREFIX}/include"
 export PNG_LIBRARY_RELEASE="${PREFIX}/lib/libpng.dylib"
 export FREETYPE_INCLUDE_DIR="${PREFIX}/include"
 export FREETYPE_LIBRARIES="${PREFIX}/lib/freetype.lib"
+export PYTHON_EXECUTABLE="${PREFIX}/bin/python"
+export PYTHON_INCLUDE_DIR="${PREFIX}/include"
+
 make distclean;
 
 #  ./configure \
@@ -165,6 +168,8 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Droofit=ON \
 -Dbuiltin_afterimage=ON \
 -Dpython=ON \
+-DPYTHON_EXECUTABLE="${PREFIX}/bin/python" \
+-DPYTHON_INCLUDE_DIR="${PREFIX}/include" \
 || return 1;
 #-Dbuiltin_llvm=ON \
 #-Dcxx11=ON \
