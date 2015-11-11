@@ -163,22 +163,11 @@ mkdir workdir
 cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
-# -Dalien=OFF \
--Dasimage=ON \
-# -Dastiff=OFF \
-# -Dbonjour=OFF \
-# -Dbuiltin_ftgl=OFF \
-# -Dbuiltin_glew=OFF \
+-Dgminimal=ON \
 -Dccache=ON \
 -Droofit=ON \
-# -Dchirp=OFF \
-# -Ddcache=OFF \
-# -Dfitsio=OFF \
-# -Dgviz=OFF \
--Dbuiltin_afterimage=ON \
 -Dpython=ON \
 -Dpch=ON \
--Dgminimal=ON \
 -DPYTHON_LIBRARY="${PREFIX}/lib/libpython3.4m.dylib" \
 -DPYTHON_INCLUDE_DIR="${PREFIX}/include" \
 || return 1;
