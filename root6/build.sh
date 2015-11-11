@@ -121,9 +121,6 @@ export PNG_PNG_INCLUDE_DIR="${PREFIX}/include"
 export PNG_LIBRARY_RELEASE="${PREFIX}/lib/libpng.dylib"
 export FREETYPE_INCLUDE_DIR="${PREFIX}/include"
 export FREETYPE_LIBRARIES="${PREFIX}/lib/freetype.lib"
-export PYTHON_EXECUTABLE="${PREFIX}/bin/python"
-export PYTHON_INCLUDE_DIR="${PREFIX}/include"
-export PYTHONPATH="${PREFIX}/lib/"
 make distclean;
 
 #  ./configure \
@@ -163,14 +160,27 @@ mkdir workdir
 cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
--Dgminimal=ON \
+-Dalien=OFF \
 -Dasimage=ON \
+-Dastiff=OFF \
+-Dbonjour=OFF \
+-Dbuiltin_ftgl=OFF \
+-Dbuiltin_glew=OFF \
+-Dccache=ON \
 -Droofit=ON \
+-Dchirp=OFF \
+-Ddcache=OFF \
+-Dfitsio=OFF \
+-Dgviz=OFF \
 -Dbuiltin_afterimage=ON \
 -Dpython=ON \
--DPYTHON_EXECUTABLE="${PREFIX}/bin/python" \
--DPYTHON_INCLUDE_DIR="${PREFIX}/include" \
--DPYTHONPATH="${PREFIX}/lib/" \
+-Dopengl=OFF \
+-Dsqlite=OFF \
+-Dldap=OFF \
+-Dpgsql=OFF  \
+-Dkrb5=OFF \
+-Dpgsql=OFF \
+-Dshadowpw=OFF \
 || return 1;
 #-Dbuiltin_llvm=ON \
 #-Dcxx11=ON \
