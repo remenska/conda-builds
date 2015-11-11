@@ -229,7 +229,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 # -Dbuiltin_zlib=ON \
 
 
-make  || return 1;
+make -j2 || return 1;
 make install || return 1;
 
 return 0;
