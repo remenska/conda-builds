@@ -172,6 +172,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dbonjour=OFF \
 -Dbuiltin_ftgl=OFF \
 -Dbuiltin_glew=OFF \
+-Dccache=ON \
 -Dchirp=OFF \
 -Ddcache=OFF \
 -Dfitsio=OFF \
@@ -192,7 +193,8 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dxml=OFF \
 || return 1;
 # -Droofit=ON \
-# -Dccache=ON \
+
+
 # -Dopengl=OFF \
 # -Dsqlite=OFF \
 # # -Dldap=OFF \
