@@ -195,6 +195,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dbuiltin_afterimage=OFF \
 -Dtmva=OFF \
 -Dvdt=OFF \
+-Dexceptions=OFF \
 || return 1;
 # -Droofit=ON \
 
