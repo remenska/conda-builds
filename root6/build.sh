@@ -170,7 +170,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -DPYTHON_EXECUTABLE="${PREFIX}/bin/python3" \
 -DPYTHON_INCLUDE_DIR="${PREFIX}/include/python3.4m" \
 -DPYTHON_LIBRARY="${PREFIX}/lib/libpython3.4m.dylib" \
--PYTHON_INCLUDE_PATH="${PREFIX}/include/python3.4m" \
+-DPYTHON_INCLUDE_PATH="${PREFIX}/include/python3.4m" \
 || return 1;
 #-Droofit=ON \
 #-Dalien=OFF \
