@@ -163,7 +163,6 @@ mkdir workdir
 cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
--Dccache=ON \
 -Dpython=ON \
 -Droofit=ON \
 -Dalien=OFF \
