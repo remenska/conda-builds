@@ -193,6 +193,8 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dbuiltin_ftgl=OFF \
 -Dbuiltin_freetype=OFF \
 -Dbuiltin_afterimage=OFF \
+-Dtmva=OFF \
+-Dvdt=OFF \
 || return 1;
 # -Droofit=ON \
 
